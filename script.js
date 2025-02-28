@@ -50,8 +50,34 @@ document.getElementById('clearTaskBtn').addEventListener('click',
      () => {
         
         task = [];
-        
+
         displayTask()
     
         
 })
+
+
+
+taskIn.addEventListener('keydown', (e) => {
+    // Check if the Enter key is pressed
+    if (e.key === 'Enter') {
+     
+      const taskValue = taskIn.value;
+  
+      
+      if (taskValue) {
+        // Add new task
+        task.push(taskValue);
+        // Clear unwanted task
+        taskIn.value = '';
+        // Display task
+        displayTask();
+      }
+    }
+  });
+
+  function taskCounter(task){
+    return task.length
+
+    
+  }
